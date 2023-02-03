@@ -1,8 +1,28 @@
 #!/bin/bash/python3
+import os
+import re
 import csv
 from reportlab.lib import pagesizes
 from reportlab.lib.units import cm
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
+
+#cargamos fuentes.
+
+path = './fonts/'
+
+for font_file in os.listdir(directory):
+	if font_file.endswith('.ttf'):
+		font_name = re.sub(r'\.ttf$', '', font_file, flags=re.IGNORECASE)
+		font_name = font_name.lower()
+		font_path = os.path.join(directory, font_file)
+		pdfmetrics.registerFont(TTFont(font_name, font_path))
+
+
+
+
 
 
 
