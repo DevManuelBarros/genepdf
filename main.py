@@ -11,7 +11,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 
 #cargamos fuentes.
 
-path = './fonts/'
+directory = './fonts/'
 
 for font_file in os.listdir(directory):
 	if font_file.endswith('.ttf'):
